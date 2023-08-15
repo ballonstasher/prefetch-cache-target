@@ -1,0 +1,21 @@
+include $(MFS_TOP_DIR)/mim/Makefile.include
+
+MIM_SRCS += \
+	metafs_io_request.cpp \
+	metafs_io_multi_q.cpp \
+	meta_io_manager.cpp \
+	metafs_io_scheduler.cpp \
+	mio.cpp \
+	mpio.cpp \
+	mpio_allocator.cpp \
+	read_mpio.cpp \
+	write_mpio.cpp \
+	mdpage.cpp \
+	metafs_io_handler_base.cpp \
+	mio_handler.cpp \
+	scalable_meta_io_worker.cpp \
+	mpio_handler.cpp \
+	mfs_io_range_overlap_chker.cpp \
+	mdpage_buf_pool.cpp
+
+SRCS += $(MIM_SRCS)

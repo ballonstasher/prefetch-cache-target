@@ -1,0 +1,6 @@
+# MFS_INCLUDE_PATH
+MSC_TOP_DIR=msc
+
+MFS_INCLUDE_PATH += \
+    $(MSC_TOP_DIR) \
+    $(MSC_TOP_DIR)/mbr

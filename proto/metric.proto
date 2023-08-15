@@ -1,0 +1,52 @@
+syntax="proto3";
+
+option go_package = "pos.metric";
+
+enum MetricTypes {
+  START = 0;
+  COUNTER = 1;
+  GAUGE = 2;
+  HISTOGRAM = 3;
+}
+
+service MetricManager {
+  //Publisher -> Manager
+  rpc MetricPublish(MetricPublishRequest) returns (MetricPublishResponse) {}
+}
+
+message MetricPublishRequest
+{
+  // Max 1,000
+  repeated Metric metrics = 1;
+}
+
+message MetricPublishResponse
+{
+  uint64 totalReceivedMetrics = 1;
+}
+
+message Metric
+{
+  MetricTypes type = 1;
+  string name = 3;
+  oneof value {
+    uint64 counterValue = 4;
+    int64 gaugeValue = 5;
+    HistogramValue histogramValue = 6;
+  }
+  repeated Label labels = 7;
+}
+
+message HistogramValue
+{
+  repeated int64 bucketRange = 1;
+  repeated uint64 bucketCount = 2;
+  int64 sum = 3;
+  uint64 totalCount = 4;
+}
+
+message Label
+{
+  string key = 1;
+  string value = 2;
+}

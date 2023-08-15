@@ -1,0 +1,20 @@
+include $(MFS_TOP_DIR)/mvm/Makefile.include
+
+MVM_SRCS += \
+	mf_inode.cpp \
+	meta_volume.cpp \
+	ssd_meta_volume.cpp \
+	nvram_meta_volume.cpp \
+	meta_volume_container.cpp \
+	meta_volume_handler.cpp \
+	meta_volume_manager.cpp \
+	inode_manager.cpp \
+	file_descriptor_allocator.cpp \
+	catalog.cpp \
+	catalog_manager.cpp \
+	extent_allocator.cpp \
+	inode_table_header.cpp \
+	inode_table.cpp \
+	on_volume_meta_region_mgr.cpp \
+
+SRCS += $(MVM_SRCS)

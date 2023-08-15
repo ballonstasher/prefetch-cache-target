@@ -1,0 +1,6 @@
+include $(MFS_TOP_DIR)/mdi/Makefile.include
+
+MDI_SRCS += \
+	mdi_manager.cpp \
+
+SRCS += $(MDI_SRCS)

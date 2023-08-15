@@ -1,0 +1,8 @@
+# MFS_INCLUDE_PATH
+MVM_TOP_DIR=mvm
+
+MFS_INCLUDE_PATH += \
+	$(MVM_TOP_DIR) \
+	$(MVM_TOP_DIR)/volume \
+	$(MVM_TOP_DIR)/volume/ssd \
+	$(MVM_TOP_DIR)/volume/nvram

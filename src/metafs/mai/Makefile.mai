@@ -1,0 +1,9 @@
+include $(MFS_TOP_DIR)/mai/Makefile.include
+
+MAI_SRCS += \
+	metafs_management_api.cpp \
+	metafs_file_control_api.cpp \
+	metafs_io_api.cpp \
+	metafs_wbt_api.cpp \
+
+SRCS += $(MAI_SRCS)

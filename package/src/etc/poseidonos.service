@@ -1,0 +1,14 @@
+[Unit]
+Description=poseidonos
+
+[Service]
+Type=simple
+ExecStartPre=/usr/local/etc/setup_env.sh
+ExecStart=/usr/local/bin/poseidonos
+ExecStopPost=/usr/local/lib/spdk/scripts/setup.sh reset
+KillSignal=SIGKILL
+TimeoutSec=900
+
+[Install]
+WantedBy=multi-user.target
+Alias=poseidonos
